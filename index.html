@@ -1,49 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    
+
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>13 Shades of Hokey Pokey</title>
-	    <script src="jquery-3.3.1.min.js"></script>
-    <script src="script.js"></script>
-    
+    <script src="jquery-3.4.1.min.js"></script>
+
 </head>
 
-<body >
-    
+<body>
+
     <style>
-        
-        * {
-            box-sizing: border-box;
+        #ls {
+            font-family: 'Story Sans', 'Helvetica Neue', helvetica, sans-serif;
+            font-weight: 400;
         }
-        
-        body, p {
+
+        body,
+        p {
             margin: 0;
         }
-        
+
         .top-stripe {
             margin: auto;
             background-color: #ffffff;
             width: 808px;
         }
-        
+
         .logo {
             width: 169px;
             padding: 24px 0;
         }
-        
+
         .input-stripe-container {
             width: 100%;
             background-color: #FFC041;
-            box-shadow: inset 0 10px #F9AF2C; 
+            box-shadow: inset 0 10px #F9AF2C;
         }
-        
+
         .input-stripe {
             margin: auto;
             padding: 48px 0 24px;
             width: 808px;
         }
-        
+
         .heading {
             font-size: 48px;
             color: #ffffff;
@@ -51,28 +52,28 @@
             font-weight: 700;
             line-height: 56px;
         }
-        
+
         .input-form {
             margin-top: 24px;
         }
-        
+
         .both-select {
             display: inline-block;
         }
-        
+
         .select {
             display: inline-block;
         }
-        
+
         .label {
             font-size: 16px;
             color: #ffffff;
             font-family: 'Story Sans', 'Helvetica Neue', helvetica, sans-serif;
             font-weight: 700;
-			margin-top: 20px;
+            margin-top: 20px;
         }
 
-        
+
         select {
             display: inline-block;
             -webkit-appearance: none;
@@ -88,20 +89,21 @@
             font-size: 16px;
             color: #44413d;
         }
-        
+
         select:focus {
             outline: 2px solid #ccc;
         }
-        
-        .level-select {margin-top:20px;
+
+        .level-select {
+            margin-top: 20px;
             margin-left: 24px;
-			    margin-right: 20px;
+            margin-right: 20px;
         }
-        
+
         .button {
             display: inline-block;
         }
-        
+
         button {
             margin-top: 24px;
             width: 168px;
@@ -112,45 +114,46 @@
             padding: 14px 16px 14px 16px;
             border: none;
             background-color: #007acd;
-            
+
             border-radius: 3px;
             font-size: 16px;
             font-family: 'Story Sans', 'Helvetica Neue', helvetica, sans-serif;
             font-weight: 500;
             color: #ffffff;
-            box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.25), inset 0 -3px 0px rgba(0, 0, 0, 0.3); 
+            box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.25), inset 0 -3px 0px rgba(0, 0, 0, 0.3);
         }
-        
-        button:hover, select:hover {
+
+        button:hover,
+        select:hover {
             cursor: pointer;
         }
-        
+
         button:hover {
             background-color: #3da5eb;
-            box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.25), inset 0 -4px 0px rgba(0, 0, 0, 0.3); 
+            box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.25), inset 0 -4px 0px rgba(0, 0, 0, 0.3);
         }
-        
+
         button:focus {
             outline: 0;
         }
-        
+
         button:active {
             background-color: #00569e;
-            box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.01), inset 0 -4px 0px rgba(0, 0, 0, 0.01); 
+            box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.01), inset 0 -4px 0px rgba(0, 0, 0, 0.01);
         }
-        
+
         .output-stripe-container {
             width: 100%;
             background-color: #FFCB4F;
         }
-        
+
         .output-stripe {
             padding-top: 40px;
             padding-bottom: 48px;
             margin: auto;
             width: 808px;
         }
-        
+
         .card {
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
@@ -162,119 +165,119 @@
             font-weight: 700;
             text-align: center;
             display: inline-block;
-            vertical-align:top;
-			margin:20px;
-			width: 288px;
-			padding:20px;
-			display:block;
-			    margin-left: auto;
-    margin-right: auto;
-}
-        }
-		
-		.contrast-card {
-           padding: 15px;
-    height: 290px;
-
+            margin: 20px;
+            width: 288px;
+            padding: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        
+
+        .contrast-card {
+            padding: 23px;
+        }
+
+
         .sample-text {
             display: inline-block;
             vertical-align: top;
             color: #ffffff;
         }
-   
+
         .large-sample {
             font-family: 'Story Sans', 'Helvetica Neue', helvetica, sans-serif;
             font-size: 30px;
             font-weight: 700;
             color: inherit;
         }
-        
+
         .normal-sample {
             font-family: 'Story Sans', 'Helvetica Neue', helvetica, sans-serif;
-            font-size: 14px;
+            font-size: 23px;
             font-weight: 400;
             color: inherit;
         }
-        
+
         @media only screen and (max-width: 840px) {
-            
-            .top-stripe, .input-stripe-container, .output-stripe-container {
+
+            .top-stripe,
+            .input-stripe-container,
+            .output-stripe-container {
                 width: 100%;
                 padding: 0 16px;
             }
-            
-            .input-stripe, .output-stripe {
+
+            .input-stripe,
+            .output-stripe {
                 width: 100%;
             }
-            
+
             .button {
                 width: 100%;
             }
-            
+
             button {
                 margin: 24px 0 0 0;
                 display: block;
                 width: 100%;
             }
-            
+
             .both-select {
                 display: block;
             }
-            
+
             .select {
                 width: 100%;
             }
-            
+
             .colour-select {
                 width: calc(25% - 14px);
             }
-            
+
             .level-select {
                 width: calc(20% - 14px);
             }
-  
+
         }
-        
+
         @media only screen and (max-width: 600px) {
-            
+
             .select {
                 width: 100%;
             }
-            
+
             .bg {
                 margin: 24px 0 0 0;
             }
-            
+
             .contrast-ratio {
                 width: 100%;
             }
 
-            
+
         }
-		
-		.card-text{
-			 font-family: 'Story Sans', 'Helvetica Neue', helvetica, sans-serif;
+
+        .card-text {
+            font-family: 'Story Sans', 'Helvetica Neue', helvetica, sans-serif;
             font-size: 14px;
             font-weight: 200;
             color: inherit;
-			    line-height: 25px;
-				
-		}
-		.output-stripe {
-		    text-align: center;
-}
-        
+            line-height: 25px;
+
+        }
+
+        .output-stripe {
+            text-align: center;
+        }
     </style>
-    
+
     <div class="top-stripe">
         <a href="https://trademe.nz/" target="_blank">
             <img class="logo" src="Images/Logo.png" alt="Trade Me">
         </a>
     </div>
-    
+
     <div class="input-stripe-container">
         <div class="input-stripe">
             <div class="heading">
@@ -283,325 +286,412 @@
             <div class="input-form">
                 <div class="both-select">
                     <div class="select">
-                        <div class="label" ><p>My text colour is 
-                        <div class="text-selectors">
-                            <select class="colour-select" id="textColour" onchange="setColour()">
+                        <div class="label">
+                            <p>My text colour is
+                                <div class="text-selectors">
+                                    <select class="colour-select" id="textColour" onchange="setColour()">
 
-                              <option value="0">Pohutukawa</option>
-                              <option value="1">Jaffa</option>
-                              <option value="2">Hokey Pokey</option>
+                                        <option value="0">Pohutukawa</option>
+                                        <option value="1">Jaffa</option>
+                                        <option value="2">Hokey Pokey</option>
 
-                              <option value="3">Kiwifruit</option>
-                              <option value="4">Feijoa</option>
-                              <option value="5">Waitomo</option>
+                                        <option value="3">Kiwifruit</option>
+                                        <option value="4">Feijoa</option>
+                                        <option value="5">Waitomo</option>
 
-                              <option value="6">Paua</option>
-                              <option value="7">Tasman</option>
-                              <option value="8">Tip Top</option>
+                                        <option value="6">Paua</option>
+                                        <option value="7">Tasman</option>
+                                        <option value="8">Tip Top</option>
 
-                              <option value="9">Hebe</option>
-                              <option value="10">Pinot</option>
-                              <option value="11">Mordor</option>
+                                        <option value="9">Hebe</option>
+                                        <option value="10">Pinot</option>
+                                        <option value="11">Mordor</option>
 
-                              <option value="12">Bluff Oyster</option>
-                              <option value="13">Silver Fern</option>
-                              <option value="14">Glacier</option>
+                                        <option value="12">Bluff Oyster</option>
+                                        <option value="13">Silver Fern</option>
+                                        <option value="14">Glacier</option>
 
-                              <option selected value="15">White</option>
-                            </select>
+                                        <option selected value="15">White</option>
+                                    </select>
 
-                            <select disabled class="level-select" id="textLevel" onchange="setColour()">   
-                              <option selected value="0" class="change">-</option>
-                              <option value="1" class="change">10</option>
-                              <option value="2" class="change">20</option>
-                              <option value="3" class="change">30</option>
-                              <option value="4" class="change">50</option>
-                              <option value="5" class="change">100</option>
-                              <option value="6" class="change">200</option>
-                              <option value="7" class="change">300</option>
-                              <option value="8" class="change">400</option>
-                              <option value="9" class="change">500</option> 
-                              <option value="10" class="change">600</option>
-                              <option value="11" class="change">700</option>
-                              <option value="12" class="change">800</option>
-                              <option value="13" class="change">900</option>
-                            </select>
-							
-                       at <select onchange="changeSize(this.value)" 
-					   class="level-select" id="fontSize">
-						</select>  px </p> </div></div>
-                    </div>
-                    <div class="select bg" >
-                        <div class="label" id="textBGLabel"><p>Background Colour</p></div>
-                        <div class="text-selectors">
-                            <select class="colour-select" id="bgColour" onchange="setColour()">
+                                    <select disabled class="level-select" id="textLevel" onchange="setColour()">
+                                        <option selected value="0" class="change">-</option>
+                                        <option value="1" class="change">10</option>
+                                        <option value="2" class="change">20</option>
+                                        <option value="3" class="change">30</option>
+                                        <option value="4" class="change">50</option>
+                                        <option value="5" class="change">100</option>
+                                        <option value="6" class="change">200</option>
+                                        <option value="7" class="change">300</option>
+                                        <option value="8" class="change">400</option>
+                                        <option value="9" class="change">500</option>
+                                        <option value="10" class="change">600</option>
+                                        <option value="11" class="change">700</option>
+                                        <option value="12" class="change">800</option>
+                                        <option value="13" class="change">900</option>
+                                    </select>
 
-                              <option value="0">Pohutukawa</option>
-                              <option value="1">Jaffa</option>
-                              <option selected value="2">Hokey Pokey</option>
-
-                              <option value="3">Kiwifruit</option>
-                              <option value="4">Feijoa</option>
-                              <option value="5">Waitomo</option>
-
-                              <option value="6">Paua</option>
-                              <option value="7">Tasman</option>
-                              <option value="8">Tip Top</option>
-
-                              <option value="9">Hebe</option>
-                              <option value="10">Pinot</option>
-                              <option value="11">Mordor</option>
-
-                              <option value="12">Bluff Oyster</option>
-                              <option value="13">Silver Fern</option>
-                              <option value="14">Glacier</option>
-
-                              <option value="15">White</option>
-                            </select>
-
-                            <select class="level-select" id="bgLevel" onchange="setColour()">
-                              <option value="0" class="bg-lvl-option">5</option>
-                              <option value="1" class="bg-lvl-option">10</option>
-                              <option value="2" class="bg-lvl-option">20</option>
-                              <option value="3" class="bg-lvl-option">30</option>
-                              <option value="4" class="bg-lvl-option">50</option>
-                              <option value="5" class="bg-lvl-option">100</option>
-                              <option value="6" class="bg-lvl-option">200</option>
-                              <option selected value="7" class="bg-lvl-option">300</option>
-                              <option value="8" class="bg-lvl-option">400</option>
-                              <option value="9" class="bg-lvl-option">500</option>
-                              <option value="10" class="bg-lvl-option">600</option>
-                              <option value="11" class="bg-lvl-option">700</option>
-                              <option value="12" class="bg-lvl-option">800</option>
-                              <option value="13" class="bg-lvl-option">900</option>
-                            </select>
+                                    at <select onchange="changeSize(this.value)" class="level-select" id="fontSize">
+                                    </select> px </p>
                         </div>
                     </div>
                 </div>
-                <div class="button">
-                    <button alt="Swap text and background colors" type="button" aria-pressed="false" onclick="swapColours()">Swap</button>
+                <div class="select bg">
+                    <div class="label" id="textBGLabel">
+                        <p>Background Colour</p>
+                    </div>
+                    <div class="text-selectors">
+                        <select class="colour-select" id="bgColour" onchange="setColour()">
+
+                            <option value="0">Pohutukawa</option>
+                            <option value="1">Jaffa</option>
+                            <option selected value="2">Hokey Pokey</option>
+
+                            <option value="3">Kiwifruit</option>
+                            <option value="4">Feijoa</option>
+                            <option value="5">Waitomo</option>
+
+                            <option value="6">Paua</option>
+                            <option value="7">Tasman</option>
+                            <option value="8">Tip Top</option>
+
+                            <option value="9">Hebe</option>
+                            <option value="10">Pinot</option>
+                            <option value="11">Mordor</option>
+
+                            <option value="12">Bluff Oyster</option>
+                            <option value="13">Silver Fern</option>
+                            <option value="14">Glacier</option>
+
+                            <option value="15">White</option>
+                        </select>
+
+                        <select class="level-select" id="bgLevel" onchange="setColour()">
+                            <option value="0" class="bg-lvl-option">5</option>
+                            <option value="1" class="bg-lvl-option">10</option>
+                            <option value="2" class="bg-lvl-option">20</option>
+                            <option value="3" class="bg-lvl-option">30</option>
+                            <option value="4" class="bg-lvl-option">50</option>
+                            <option value="5" class="bg-lvl-option">100</option>
+                            <option value="6" class="bg-lvl-option">200</option>
+                            <option selected value="7" class="bg-lvl-option">300</option>
+                            <option value="8" class="bg-lvl-option">400</option>
+                            <option value="9" class="bg-lvl-option">500</option>
+                            <option value="10" class="bg-lvl-option">600</option>
+                            <option value="11" class="bg-lvl-option">700</option>
+                            <option value="12" class="bg-lvl-option">800</option>
+                            <option value="13" class="bg-lvl-option">900</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="button">
+                <button alt="Swap text and background colors" type="button" aria-pressed="false"
+                    onclick="swapColours()">Swap</button>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="output-stripe-container" id="osc">
+        <div class="output-stripe">
+            <div class="sample-text" id="ls">
+                <div id="ls">
+                    <p> This is an example of your text </p>
+                </div>
+            </div>
+            <div class="card contrast-card">
+                <span id="ratio">1.51</span> : 1
+                <div class=" goodCard" id="goodRatio">
+                    <img src="Images/basic-cross-framed.svg" alt=""></img>
+                    <div class="card-text"> Your color contrast is AA compliant. congrats g </div>
+                </div>
+                <div class=" badCard card-text " id="badRatio">
+                    <img src="Images/sad.svg" alt="Trade Me"></img>
+                    <p> Your color contrast is not AA compliant.</p>
+                    <p id="suggestion1"> You could try: </p>
+                    <p id="suggestion2"> You could try: </p>
+
                 </div>
             </div>
         </div>
-    </div>   
-    
-    <div class="output-stripe-container" id="osc">
-        <div class="output-stripe">
-		  			<div class="sample-text" id="ls">
-                
-				<div class="normal-sample"><p>This is an example of your text </p></div>
-				
-            </div>
-		
-            <div class="card contrast-card"><span id="ratio">1.51</span> : 1
 
-			<div class=" goodCard" id="goodRatio">
-			<img   src="Images/basic-cross-framed.svg" alt=""></img>
-							<div class="card-text"> Your color palette is AA compliant. congrats g </div>
-
-			</div>
-			<div class=" badCard card-text " id="badRatio">
-							<img  src="Images/sad.svg" alt="Trade Me"></img>
-
-			        <p > Your color palette is not AAA compliant.</p>
-					<p> You could try: </p>
-					<ul>
-					<li> Increasing the font size </li>
-					<li> Choosing a darker background </li>
-					</ul>
-			</div>
-        </div>
-    </div>
-        
-    <script language="Javascript" type="text/javascript">
+        <script language="Javascript" type="text/javascript">
             var select = document.getElementById("fontSize");
-			for(var i=1; i<=50; i++){
-				var option = document.createElement("OPTION");
-				select.options.add(option);
-				option.text = i;
-				option.value = i;
-			} select.selectedIndex = 15;
-document.getElementById("goodRatio").style.display  = "none";
-				document.getElementById("badRatio").style.display  = "block";
+            for (var i = 8; i <= 50; i++) {
+                var option = document.createElement("OPTION");
+                select.options.add(option);
+                option.text = i;
+                option.value = i;
+            } select.selectedIndex = 15;
+
+            document.getElementById("goodRatio").style.display = "none";
+            document.getElementById("badRatio").style.display = "block";
+
+
             function setColour(colourName, colourLevel) {
-                    
+
                 var colours = [
-//                    pohutukawa
+                    //                    pohutukawa
                     ['#fff8f8', '#fff1f2', '#ffe7e7', '#ffd5d5', '#ffbcbd', '#fa999b', '#f57f73', '#ef6d6b', '#e95958', '#e34647', '#d93a3f', '#c82630', '#b21c2a', '#9f2023'],
-//                    jaffa
+                    //                    jaffa
                     ['#fff8f5', '#fff2ed', '#ffe9e1', '#ffd9ca', '#ffc6b0', '#ffaf8f', '#ff976e', '#ff8455', '#fc723e', '#f3632d', '#e95219', '#d54209', '#c23802', '#a72f00'],
-//                    hokey pokey
+                    //                    hokey pokey
                     ['#fffcf0', '#fffae5', '#fff4d1', '#ffe8ac', '#ffe18d', '#ffd972', '#ffd35f', '#ffcb4f', '#ffc041', '#f9af2c', '#eb9600', '#d57800', '#b45600', '#943900'],
-//                    kiwifruit
+                    //                    kiwifruit
                     ['#fdfff1', '#fafee0', '#f3f9d4', '#eaf2bb', '#dfe8a4', '#d4df87', '#ccda70', '#c1d155', '#b8cb3d', '#acc313', '#9ab91a', '#88aa28', '#719c2f', '#659130'],
-//                    feijoa
+                    //                    feijoa
                     ['#f3fff6', '#ecfdf2', '#e1fbea', '#c6f3d5', '#a8eabe', '#87dfa5', '#6fd591', '#57c57b', '#3cb766', '#29a754', '#229b4b', '#1b8940', '#137b37', '#0f6d2f'],
-//                    waitomo
+                    //                    waitomo
                     ['#f1fff7', '#e8fef2', '#d9fae8', '#c4f6de', '#a8eed1', '#85e3bc', '#67d9aa', '#4ecf9a', '#34c58d', '#00bc82', '#00aa76', '#00986a', '#00825a', '#00714b'],
-//                    paua
+                    //                    paua
                     ['#f2fdff', '#e7fdff', '#d8fafd', '#c6f1f5', '#b2e8ef', '#94dfe8', '#77d6e1', '#52ccdb', '#24c0d3', '#00b3c8', '#02a5bc', '#0096ae', '#00869f', '#007893'],
-//                    tasman
+                    //                    tasman
                     ['#f3faff', '#e1f3ff', '#cbeaff', '#aedfff', '#8dcefc', '#6bbcf4', '#52b0f0', '#3da5eb', '#279be9', '#148fe2', '#007acd', '#006ebd', '#0061af', '#00569e'],
-//                    tip top
+                    //                    tip top
                     ['#f7faff', '#f0f6ff', '#e3ecff', '#d0dfff', '#bdd3ff', '#a1c0fe', '#84acfa', '#659af0', '#4d80e5', '#3b71dc', '#2f62c9', '#2656b7', '#1d479b', '#183c84'],
-//                    hebe
+                    //                    hebe
                     ['#fcf7ff', '#fcefff', '#f2ddf8', '#e5c6eb', '#d1a9da', '#bc8cc5', '#ac78b8', '#9660a0', '#874f92', '#7b4288', '#683473', '#5c2b66', '#50215a', '#451b4f'],
-//                    pinot
+                    //                    pinot
                     ['#fff5fe', '#ffedfc', '#f9e0f7', '#edc1e5', '#dc9ece', '#cb82bb', '#b468a0', '#a35489', '#944275', '#8a3467', '#812b5f', '#722152', '#661647', '#5a143f'],
-//                    mordor
+                    //                    mordor
                     ['#fefafb', '#fbf5f6', '#f0e8e8', '#dfd3d4', '#c9b9b9', '#ad9696', '#94797a', '#806263', '#6f5253', '#5d4244', '#4d3739', '#422e2f', '#352524', '#291e1e'],
-//                    bluff oyster
+                    //                    bluff oyster
                     ['#faf9f8', '#f6f5f4', '#e8e6e3', '#d7d5d2', '#c4c0bc', '#aea9a5', '#9b9591', '#85807c', '#76716d', '#65605d', '#5a5653', '#44413d', '#393531', '#2f2c28'],
-//                    silver fern
+                    //                    silver fern
                     ['#fbfbfb', '#f7f7f7', '#e9e9e9', '#dadada', '#c9c9c9', '#b9b9b9', '#a1a1a1', '#888888', '#777777', '#666666', '#555555', '#444444', '#333333', '#222222'],
-//                    glacier
+                    //                    glacier
                     ['#fafbfe', '#f4f6fc', '#e6e9ef', '#d3d8e2', '#bbc4d5', '#a4b1c5', '#8e9eb6', '#7b8ca6', '#6d7e98', '#5f6f88', '#546279', '#48546a', '#3e465c', '#323a4d'],
-//                    white
+                    //                    white
                     ['#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff'],
-                    ];
-                    
+                ];
+
                 document.getElementById('ls').style.color = colours[document.getElementById("textColour").value][document.getElementById("textLevel").value];
-                
+
                 document.getElementById('osc').style.backgroundColor = colours[document.getElementById("bgColour").value][document.getElementById("bgLevel").value];
-                
-				
-				
+
                 disableSelect();
-                
-                contrast(document.getElementById('ls').style.color.substring(4, document.getElementById('ls').style.color.length-1).replace(/ /g, '').split(','), document.getElementById('osc').style.backgroundColor.substring(4, document.getElementById('osc').style.backgroundColor.length-1).replace(/ /g, '').split(','));
-                
+
+                resultsContrast(document.getElementById('ls').style.color.substring(4, document.getElementById('ls').style.color.length - 1).replace(/ /g, '').split(','), document.getElementById('osc').style.backgroundColor.substring(4, document.getElementById('osc').style.backgroundColor.length - 1).replace(/ /g, '').split(','));
+
+                alert(document.getElementById('ls').style.color);
+
+                getSuggestions(getRGB(document.getElementById('ls').style.color), getRGB(document.getElementById('osc').style.backgroundColor), colours);
+
+
+            }
+            function getRGB(rgb) {
+                return rgb.substring(4, rgb.length - 1)
+                    .replace(/ /g, '')
+                    .split(',');
+            }
+            function getSuggestions(rgb1, rgb2, colors) {
+                var fontresults = [];
+                var colorresults = [];
+                for (var i = 0; i <= 14; i++) {
+                    for (var j = 0; j <= 12; j++) {
+                        var rgb3 = hexToRgb(colors[i][j]);
+                        //   alert(rgb1 + " *  " + rgb3);
+                        if (ratio(rgb2, rgb3) > 4) {
+                            var result = getColor(i + 1, j + 1);
+                            fontresults.push(result);
+                        } if (ratio(rgb1, rgb3) > 4) {
+                            var result = getColor(i + 1, j + 1);
+                            colorresults.push(result);
+                        }
+                    };
+                };
+                if (fontresults.length > 0) {
+                    document.getElementById("suggestion1").innerHTML = "You could change the font color to " + (fontresults[0])[0] + ' at level ' + (fontresults[0])[1] + " or to " + (fontresults[fontresults.length - 1])[0] + ' at level ' + (fontresults[fontresults.length - 1])[1];
                 }
-                
-        function contrast(rgb1, rgb2) {
-            var cc1 = luminanace(rgb1[0], rgb1[1], rgb1[2]) + 0.05;
-            var cc2 = luminanace(rgb2[0], rgb2[1], rgb2[2]) + 0.05;
-            
-            if (cc1 >= cc2) {
-                var cc = cc1/cc2;
-            } 
-            else {
-                var cc = cc2/cc1;
+                if (colorresults.length > 0) {
+                    document.getElementById("suggestion2").innerHTML = "You could change the background color to " + (colorresults[0])[0] + ' at level ' + (colorresults[0])[1] + " or to " + (colorresults[colorresults.length - 1])[0] + ' at level ' + (colorresults[colorresults.length - 1])[1];
+                }
             }
-            cc = round(cc, 2);
-			document.getElementById("ratio").innerHTML = cc;
 
-            if ( cc < 4.5){ // check which normal/large text is used to determine if below the standards
-				document.getElementById("goodRatio").style.display  = "none";
-				document.getElementById("badRatio").style.display  = "block";
-			} else {
-				document.getElementById("goodRatio").style.display  = "block";
-				document.getElementById("badRatio").style.display  = "none";
-			}
-        }
-        
-        function luminanace(r, g, b) {
-            var a = [r, g, b].map(function (v) {
-            v /= 255;
-            return v <= 0.03928
-            ? v / 12.92
-            : Math.pow( (v + 0.055) / 1.055, 2.4 );
-            });
-            return a[0] * 0.2126 + a[1] * 0.7152 + a[2] * 0.0722;
-        }
-        
-        function round(value, decimals) {
-          return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
-        }
-        
-        function swapColours() {
-            var textc = document.getElementById("textColour").value; 
-            var textl = document.getElementById("textLevel").value; 
-            var bgc = document.getElementById("bgColour").value; 
-            var bgl = document.getElementById("bgLevel").value; 
-            
-            document.getElementById("textColour").value = bgc;
-            document.getElementById("textLevel").value = bgl;
-            document.getElementById("bgColour").value = textc;
-            document.getElementById("bgLevel").value = textl;
-            
-            setColour();
-        }
-		
-        function changeSize(size){
-			// change div text font size.
-			document.getElementById("ls").style.fontSize = size +"px";
-						
-		}
-        function disableSelect() {
-            
-            if (document.getElementById("textColour").value == '15') {
-                document.getElementById("textLevel").disabled = true;
-                document.getElementsByClassName("change")[0].innerHTML='-';
-                document.getElementsByClassName("change")[1].innerHTML='-';
-                document.getElementsByClassName("change")[2].innerHTML='-';
-                document.getElementsByClassName("change")[3].innerHTML='-';
-                document.getElementsByClassName("change")[4].innerHTML='-';
-                document.getElementsByClassName("change")[5].innerHTML='-';
-                document.getElementsByClassName("change")[6].innerHTML='-';
-                document.getElementsByClassName("change")[7].innerHTML='-';
-                document.getElementsByClassName("change")[8].innerHTML='-';
-                document.getElementsByClassName("change")[9].innerHTML='-';
-                document.getElementsByClassName("change")[10].innerHTML='-';
-                document.getElementsByClassName("change")[11].innerHTML='-';
-                document.getElementsByClassName("change")[12].innerHTML='-';
-                document.getElementsByClassName("change")[13].innerHTML='-';
+            function getColor(i, j) {
+                var colors = new Map([
+                    [1, 'pohutakawa'],
+                    [2, 'jaffa'],
+                    [3, 'hokey pokey'],
+                    [4, 'kiwifruit'],
+                    [5, 'feijoa'],
+                    [6, 'waitomo'],
+                    [7, 'paua'],
+                    [8, 'tasman'],
+                    [9, 'tip top'],
+                    [10, 'hebe'],
+                    [11, 'pinot'],
+                    [12, 'mordor'],
+                    [13, 'bluff oyster'],
+                    [14, 'silver fern'],
+                    [15, 'glacier'],
+                    [16, 'white']
+                ]);
+                var levels = new Map([
+                    [1, 5],
+                    [2, 10],
+                    [3, 20],
+                    [4, 30],
+                    [5, 50],
+                    [6, 100],
+                    [7, 200],
+                    [8, 300],
+                    [9, 400],
+                    [10, 500],
+                    [11, 600],
+                    [12, 700],
+                    [13, 800],
+                    [14, 900]
+                ]);
+                var name = colors.get(i);
+                var level = levels.get(j);
+                return [name, level];
             }
-            else {
-                 document.getElementsByClassName("change")[0].innerHTML='5';
-                document.getElementsByClassName("change")[1].innerHTML='10';
-                document.getElementsByClassName("change")[2].innerHTML='20';
-                document.getElementsByClassName("change")[3].innerHTML='30';
-                document.getElementsByClassName("change")[4].innerHTML='50';
-                document.getElementsByClassName("change")[5].innerHTML='100';
-                document.getElementsByClassName("change")[6].innerHTML='200';
-                document.getElementsByClassName("change")[7].innerHTML='300';
-                document.getElementsByClassName("change")[8].innerHTML='400';
-                document.getElementsByClassName("change")[9].innerHTML='500';
-                document.getElementsByClassName("change")[10].innerHTML='600';
-                document.getElementsByClassName("change")[11].innerHTML='700';
-                document.getElementsByClassName("change")[12].innerHTML='800';
-                document.getElementsByClassName("change")[13].innerHTML='900';
-                 document.getElementById("textLevel").disabled = false;
-            }
-            
-            if (document.getElementById("bgColour").value == '15') {
-                document.getElementById("bgLevel").disabled = true;
-                document.getElementsByClassName("bg-lvl-option")[0].innerHTML='-';
-                document.getElementsByClassName("bg-lvl-option")[1].innerHTML='-';
-                document.getElementsByClassName("bg-lvl-option")[2].innerHTML='-';
-                document.getElementsByClassName("bg-lvl-option")[3].innerHTML='-';
-                document.getElementsByClassName("bg-lvl-option")[4].innerHTML='-';
-                document.getElementsByClassName("bg-lvl-option")[5].innerHTML='-';
-                document.getElementsByClassName("bg-lvl-option")[6].innerHTML='-';
-                document.getElementsByClassName("bg-lvl-option")[7].innerHTML='-';
-                document.getElementsByClassName("bg-lvl-option")[8].innerHTML='-';
-                document.getElementsByClassName("bg-lvl-option")[9].innerHTML='-';
-                document.getElementsByClassName("bg-lvl-option")[10].innerHTML='-';
-                document.getElementsByClassName("bg-lvl-option")[11].innerHTML='-';
-                document.getElementsByClassName("bg-lvl-option")[12].innerHTML='-';
-                document.getElementsByClassName("bg-lvl-option")[13].innerHTML='-';
-            }
-            else {
-                 document.getElementsByClassName("bg-lvl-option")[0].innerHTML='5';
-                document.getElementsByClassName("bg-lvl-option")[1].innerHTML='10';
-                document.getElementsByClassName("bg-lvl-option")[2].innerHTML='20';
-                document.getElementsByClassName("bg-lvl-option")[3].innerHTML='30';
-                document.getElementsByClassName("bg-lvl-option")[4].innerHTML='50utton';
-                document.getElementsByClassName("bg-lvl-option")[5].innerHTML='100';
-                document.getElementsByClassName("bg-lvl-option")[6].innerHTML='200';
-                document.getElementsByClassName("bg-lvl-option")[7].innerHTML='300';
-                document.getElementsByClassName("bg-lvl-option")[8].innerHTML='400';
-                document.getElementsByClassName("bg-lvl-option")[9].innerHTML='500';
-                document.getElementsByClassName("bg-lvl-option")[10].innerHTML='600';
-                document.getElementsByClassName("bg-lvl-option")[11].innerHTML='700';
-                document.getElementsByClassName("bg-lvl-option")[12].innerHTML='800';
-                document.getElementsByClassName("bg-lvl-option")[13].innerHTML='900';
-                 document.getElementById("bgLevel").disabled = false;
-            }
-        }
 
-    </script>    
-    
+            function hexToRgb(hex) {
+                hex = hex.replace('#', '');
+                r = parseInt(hex.substring(0, 2), 16);
+                g = parseInt(hex.substring(2, 4), 16);
+                b = parseInt(hex.substring(4, 6), 16);
+                return [r, g, b];
+            }
+
+
+            function resultsContrast(rgb1, rgb2) {
+                var cc = ratio(rgb1, rgb2);
+                document.getElementById("ratio").innerHTML = cc;
+
+                if (cc < 4) { // check which normal/large text is used to determine if below the standards
+                    document.getElementById("goodRatio").style.display = "none";
+                    document.getElementById("badRatio").style.display = "block";
+                } else {
+                    document.getElementById("goodRatio").style.display = "block";
+                    document.getElementById("badRatio").style.display = "none";
+                }
+            }
+            function ratio(rgb1, rgb2) {
+                var cc1 = luminanace(rgb1[0], rgb1[1], rgb1[2]) + 0.05;
+                var cc2 = luminanace(rgb2[0], rgb2[1], rgb2[2]) + 0.05;
+
+                if (cc1 >= cc2) {
+                    var cc = cc1 / cc2;
+                }
+                else {
+                    var cc = cc2 / cc1;
+                }
+                cc = round(cc, 2);
+                return cc;
+            }
+
+            function luminanace(r, g, b) {
+                var a = [r, g, b].map(function (v) {
+                    v /= 255;
+                    return v <= 0.03928
+                        ? v / 12.92
+                        : Math.pow((v + 0.055) / 1.055, 2.4);
+                });
+                return a[0] * 0.2126 + a[1] * 0.7152 + a[2] * 0.0722;
+            }
+
+            function round(value, decimals) {
+                return Number(Math.round(value + 'e' + decimals) + 'e-' + decimals);
+            }
+
+            function swapColours() {
+                var textc = document.getElementById("textColour").value;
+                var textl = document.getElementById("textLevel").value;
+                var bgc = document.getElementById("bgColour").value;
+                var bgl = document.getElementById("bgLevel").value;
+
+                document.getElementById("textColour").value = bgc;
+                document.getElementById("textLevel").value = bgl;
+                document.getElementById("bgColour").value = textc;
+                document.getElementById("bgLevel").value = textl;
+
+                setColour();
+            }
+
+            function changeSize(size) {
+                // change div text font size.
+                document.getElementById("ls").style.fontSize = size + "px";
+            }
+
+            function disableSelect() {
+
+                if (document.getElementById("textColour").value == '15') {
+                    document.getElementById("textLevel").disabled = true;
+                    document.getElementsByClassName("change")[0].innerHTML = '-';
+                    document.getElementsByClassName("change")[1].innerHTML = '-';
+                    document.getElementsByClassName("change")[2].innerHTML = '-';
+                    document.getElementsByClassName("change")[3].innerHTML = '-';
+                    document.getElementsByClassName("change")[4].innerHTML = '-';
+                    document.getElementsByClassName("change")[5].innerHTML = '-';
+                    document.getElementsByClassName("change")[6].innerHTML = '-';
+                    document.getElementsByClassName("change")[7].innerHTML = '-';
+                    document.getElementsByClassName("change")[8].innerHTML = '-';
+                    document.getElementsByClassName("change")[9].innerHTML = '-';
+                    document.getElementsByClassName("change")[10].innerHTML = '-';
+                    document.getElementsByClassName("change")[11].innerHTML = '-';
+                    document.getElementsByClassName("change")[12].innerHTML = '-';
+                    document.getElementsByClassName("change")[13].innerHTML = '-';
+                }
+                else {
+                    document.getElementsByClassName("change")[0].innerHTML = '5';
+                    document.getElementsByClassName("change")[1].innerHTML = '10';
+                    document.getElementsByClassName("change")[2].innerHTML = '20';
+                    document.getElementsByClassName("change")[3].innerHTML = '30';
+                    document.getElementsByClassName("change")[4].innerHTML = '50';
+                    document.getElementsByClassName("change")[5].innerHTML = '100';
+                    document.getElementsByClassName("change")[6].innerHTML = '200';
+                    document.getElementsByClassName("change")[7].innerHTML = '300';
+                    document.getElementsByClassName("change")[8].innerHTML = '400';
+                    document.getElementsByClassName("change")[9].innerHTML = '500';
+                    document.getElementsByClassName("change")[10].innerHTML = '600';
+                    document.getElementsByClassName("change")[11].innerHTML = '700';
+                    document.getElementsByClassName("change")[12].innerHTML = '800';
+                    document.getElementsByClassName("change")[13].innerHTML = '900';
+                    document.getElementById("textLevel").disabled = false;
+                }
+
+                if (document.getElementById("bgColour").value == '15') {
+                    document.getElementById("bgLevel").disabled = true;
+                    document.getElementsByClassName("bg-lvl-option")[0].innerHTML = '-';
+                    document.getElementsByClassName("bg-lvl-option")[1].innerHTML = '-';
+                    document.getElementsByClassName("bg-lvl-option")[2].innerHTML = '-';
+                    document.getElementsByClassName("bg-lvl-option")[3].innerHTML = '-';
+                    document.getElementsByClassName("bg-lvl-option")[4].innerHTML = '-';
+                    document.getElementsByClassName("bg-lvl-option")[5].innerHTML = '-';
+                    document.getElementsByClassName("bg-lvl-option")[6].innerHTML = '-';
+                    document.getElementsByClassName("bg-lvl-option")[7].innerHTML = '-';
+                    document.getElementsByClassName("bg-lvl-option")[8].innerHTML = '-';
+                    document.getElementsByClassName("bg-lvl-option")[9].innerHTML = '-';
+                    document.getElementsByClassName("bg-lvl-option")[10].innerHTML = '-';
+                    document.getElementsByClassName("bg-lvl-option")[11].innerHTML = '-';
+                    document.getElementsByClassName("bg-lvl-option")[12].innerHTML = '-';
+                    document.getElementsByClassName("bg-lvl-option")[13].innerHTML = '-';
+                }
+                else {
+                    document.getElementsByClassName("bg-lvl-option")[0].innerHTML = '5';
+                    document.getElementsByClassName("bg-lvl-option")[1].innerHTML = '10';
+                    document.getElementsByClassName("bg-lvl-option")[2].innerHTML = '20';
+                    document.getElementsByClassName("bg-lvl-option")[3].innerHTML = '30';
+                    document.getElementsByClassName("bg-lvl-option")[4].innerHTML = '50';
+                    document.getElementsByClassName("bg-lvl-option")[5].innerHTML = '100';
+                    document.getElementsByClassName("bg-lvl-option")[6].innerHTML = '200';
+                    document.getElementsByClassName("bg-lvl-option")[7].innerHTML = '300';
+                    document.getElementsByClassName("bg-lvl-option")[8].innerHTML = '400';
+                    document.getElementsByClassName("bg-lvl-option")[9].innerHTML = '500';
+                    document.getElementsByClassName("bg-lvl-option")[10].innerHTML = '600';
+                    document.getElementsByClassName("bg-lvl-option")[11].innerHTML = '700';
+                    document.getElementsByClassName("bg-lvl-option")[12].innerHTML = '800';
+                    document.getElementsByClassName("bg-lvl-option")[13].innerHTML = '900';
+                    document.getElementById("bgLevel").disabled = false;
+                }
+            }
+
+        </script>
+
 </body>
 
 </html>
