@@ -474,8 +474,6 @@
 
                 resultsContrast(document.getElementById('ls').style.color.substring(4, document.getElementById('ls').style.color.length - 1).replace(/ /g, '').split(','), document.getElementById('osc').style.backgroundColor.substring(4, document.getElementById('osc').style.backgroundColor.length - 1).replace(/ /g, '').split(','));
 
-                alert(document.getElementById('ls').style.color);
-
                 getSuggestions(getRGB(document.getElementById('ls').style.color), getRGB(document.getElementById('osc').style.backgroundColor), colours);
 
 
@@ -491,7 +489,6 @@
                 for (var i = 0; i <= 14; i++) {
                     for (var j = 0; j <= 12; j++) {
                         var rgb3 = hexToRgb(colors[i][j]);
-                        //   alert(rgb1 + " *  " + rgb3);
                         if (ratio(rgb2, rgb3) > 4) {
                             var result = getColor(i + 1, j + 1);
                             fontresults.push(result);
