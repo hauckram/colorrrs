@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>13 Shades of Hokey Pokey</title>
+    <script src="jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+</head>
+
+<body>
+
+    <div class="top-stripe">
+        <a href="https://trademe.nz/" target="_blank">
+            <img class="logo" src="Images/Logo.png" alt="Trade Me">
+        </a>
+    </div>
+
+    <div class="input-stripe-container">
+        <div class="input-stripe">
+            <div class="heading">
+                <p id="headerid">Accessible colour lives here.</p>
+            </div>
+            <div class="input-form">
+                <div class="both-select">
+                    <div class="select">
+                        <div class="label">
+                            <p>
+                                My text colour is
+                                <div class="text-selectors">
+                                    <select class="colour-select" id="textColour" onchange="setColour()">
+
+                                        <option value="0">Pohutukawa</option>
+                                        <option value="1">Jaffa</option>
+                                        <option value="2">Hokey Pokey</option>
+
+                                        <option value="3">Kiwifruit</option>
+                                        <option value="4">Feijoa</option>
+                                        <option value="5">Waitomo</option>
+
+                                        <option value="6">Paua</option>
+                                        <option value="7">Tasman</option>
+                                        <option value="8">Tip Top</option>
+
+                                        <option value="9">Hebe</option>
+                                        <option value="10">Pinot</option>
+                                        <option value="11">Mordor</option>
+
+                                        <option value="12">Bluff Oyster</option>
+                                        <option value="13">Silver Fern</option>
+                                        <option value="14">Glacier</option>
+
+                                        <option selected value="15">White</option>
+                                    </select>
+
+                                    <select disabled class="level-select" id="textLevel" onchange="setColour()">
+                                        <option selected value="0" class="change">-</option>
+                                        <option value="1" class="change">10</option>
+                                        <option value="2" class="change">20</option>
+                                        <option value="3" class="change">30</option>
+                                        <option value="4" class="change">50</option>
+                                        <option value="5" class="change">100</option>
+                                        <option value="6" class="change">200</option>
+                                        <option value="7" class="change">300</option>
+                                        <option value="8" class="change">400</option>
+                                        <option value="9" class="change">500</option>
+                                        <option value="10" class="change">600</option>
+                                        <option value="11" class="change">700</option>
+                                        <option value="12" class="change">800</option>
+                                        <option value="13" class="change">900</option>
+                                    </select>
+
+                                    at <select onchange="changeSize(this.value)" class="level-select" id="fontSize"></select> px
+                                </div>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="select bg">
+                    <div class="label" id="textBGLabel">
+                        <p>Background Colour</p>
+                    </div>
+                    <div class="text-selectors">
+                        <select class="colour-select" id="bgColour" onchange="setColour()">
+
+                            <option value="0">Pohutukawa</option>
+                            <option value="1">Jaffa</option>
+                            <option selected value="2">Hokey Pokey</option>
+
+                            <option value="3">Kiwifruit</option>
+                            <option value="4">Feijoa</option>
+                            <option value="5">Waitomo</option>
+
+                            <option value="6">Paua</option>
+                            <option value="7">Tasman</option>
+                            <option value="8">Tip Top</option>
+
+                            <option value="9">Hebe</option>
+                            <option value="10">Pinot</option>
+                            <option value="11">Mordor</option>
+
+                            <option value="12">Bluff Oyster</option>
+                            <option value="13">Silver Fern</option>
+                            <option value="14">Glacier</option>
+
+                            <option value="15">White</option>
+                        </select>
+
+                        <select class="level-select" id="bgLevel" onchange="setColour()">
+                            <option value="0" class="bg-lvl-option">5</option>
+                            <option value="1" class="bg-lvl-option">10</option>
+                            <option value="2" class="bg-lvl-option">20</option>
+                            <option value="3" class="bg-lvl-option">30</option>
+                            <option value="4" class="bg-lvl-option">50</option>
+                            <option value="5" class="bg-lvl-option">100</option>
+                            <option value="6" class="bg-lvl-option">200</option>
+                            <option selected value="7" class="bg-lvl-option">300</option>
+                            <option value="8" class="bg-lvl-option">400</option>
+                            <option value="9" class="bg-lvl-option">500</option>
+                            <option value="10" class="bg-lvl-option">600</option>
+                            <option value="11" class="bg-lvl-option">700</option>
+                            <option value="12" class="bg-lvl-option">800</option>
+                            <option value="13" class="bg-lvl-option">900</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="button">
+                <button alt="Swap text and background colors" type="button" aria-pressed="false"
+                        onclick="swapColours()">
+                    Swap
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="output-stripe-container" id="osc">
+        <div class="output-stripe">
+            <div class="sample-text" id="ls">
+                <div id="ls">
+                    <p> This is an example of your text </p>
+                </div>
+            </div>
+            <div class="card contrast-card">
+                <span id="ratio">1.51</span> : 1
+                <div class="goodCard" id="goodRatio">
+                    <img src="Images/basic-cross-framed.svg" alt="" />
+                    <div class="card-text"> Your color contrast is AA compliant.</div>
+                </div>
+                <div class=" badCard card-text " id="badRatio">
+                    <img src="Images/sad.svg" alt="Trade Me" />
+                    <p> Your color contrast is not AA compliant.</p>
+                    <p id="suggestion1"> You could try: </p>
+                    <p id="suggestion2"> You could try: </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js" language="Javascript" type="text/javascript"></script>
+</body>
+
+</html>
